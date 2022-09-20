@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(cxx-project-creator
+project(cpp_init
         LANGUAGES CXX
         VERSION 0.0.1
         )
@@ -20,3 +20,5 @@ add_app(
             src/main.cpp
 #        APP_PRIVATE_LIBRARIES
 )
+
+include(cmake/cpack_config.cmake)
