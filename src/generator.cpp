@@ -504,14 +504,14 @@ auto WriteAppCMakeLists(const std::filesystem::path& project_path,
   }
 
 
-  out << "add_app(";
+  out << "add_app(\n";
   out << "        APP_NAME " << param->name << '\n';
   out << "        APP_CMAKE_NAMESPACE " << param->cmake_namespace << '\n';
   out << "        CXX_STANDARD " << static_cast<uint32_t>(param->cpp_standard) << '\n';
   out << "        APP_OUTPUT_NAME " << param->output_name << '\n';
   out << "        APP_OUTPUT_NAME ${PROJECT_VERSION}\n";
-  out << "        APP_PRIVATE_INCLUDE_DIR\n            \n" << param->name;
-  out << "        APP_PRIVATE_SOURCES\n            src/main.cpp";
+  out << "        APP_PRIVATE_INCLUDE_DIR\n            " << param->name << '\n';
+  out << "        APP_PRIVATE_SOURCES\n            src/main.cpp\n";
   out << "        # APP_PUBLIC_SOURCES\n";
   out << "        # APP_PUBLIC_LIBRARIES\n";
   out << "        # APP_PRIVATE_LIBRARIES\n";
